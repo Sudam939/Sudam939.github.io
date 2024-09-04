@@ -6,6 +6,10 @@
     background-color: #f2f2f2;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .container{
     width: 88%;
     margin: auto;
@@ -38,5 +42,96 @@
     text-decoration: underline;
 }
 
+.sticky {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0 10px;
+}
 
+.active{
+    color: #ff9900;
+}
 
+nav a:hover {
+    color: #ff9900;
+    transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+}
+
+#drawer-menu {
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+#drawer-menu.open {
+    transform: translateX(0);
+}
+
+.hero{
+    transition: 0.5s;
+}
+
+.hero:hover{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Button hover effect */
+.btn {
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff9900; /* Change color on hover */
+    transform: translateY(-3px); /* Slight lift */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
+/* Fade-in effect for text */
+.sansista, p, h1 {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Social icons hover effect */
+.social-icons img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Custom underline effect */
+.underline-grow {
+    position: relative;
+    padding-bottom: 5px;
+  }
+  
+  .underline-grow::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background-color: #ff9900; /* Adjust color as needed */
+    transition: width 0.3s ease;
+  }
+  
+  .underline-grow:hover::after {
+    width: 100%;
+  }
+  
