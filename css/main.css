@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sansita+Swashed:wght@300..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-.main{
+
+.main {
     background-color: #f2f2f2;
 }
 
@@ -10,26 +11,26 @@ html {
     scroll-behavior: smooth;
 }
 
-.container{
+.container {
     width: 88%;
     margin: auto;
 }
 
-.mainfont{
+.mainfont {
     font-family: 'EB Garamond';
 }
 
-.poppins{
+.poppins {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
 }
 
-.sansita{
+.sansita {
     font-family: "Sansita Swashed", system-ui;
     font-style: normal;
 }
 
-.rubik{
+.rubik {
     font-family: "Rubik", sans-serif;
     font-weight: 600;
 }
@@ -47,7 +48,7 @@ html {
     padding: 0 10px;
 }
 
-.active{
+.active {
     color: #ff9900;
 }
 
@@ -65,11 +66,11 @@ nav a:hover {
     transform: translateX(0);
 }
 
-.hero{
+.hero {
     transition: 0.5s;
 }
 
-.hero:hover{
+.hero:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -79,14 +80,18 @@ nav a:hover {
 }
 
 .btn:hover {
-    background-color: #ff9900; /* Change color on hover */
-    transform: translateY(-3px); /* Slight lift */
+    background-color: #ff9900;
+    /* Change color on hover */
+    transform: translateY(-3px);
+    /* Slight lift */
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     border: none;
 }
 
 /* Fade-in effect for text */
-.sansista, p, h1 {
+.sansista,
+p,
+h1 {
     opacity: 0;
     animation: fadeIn 1s ease-in forwards;
 }
@@ -118,20 +123,34 @@ nav a:hover {
 .underline-grow {
     position: relative;
     padding-bottom: 5px;
-  }
-  
-  .underline-grow::after {
+}
+
+.underline-grow::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
     height: 3px;
     width: 0;
-    background-color: #ff9900; /* Adjust color as needed */
+    background-color: #ff9900;
+    /* Adjust color as needed */
     transition: width 0.3s ease;
-  }
-  
-  .underline-grow:hover::after {
+}
+
+.underline-grow:hover::after {
     width: 100%;
-  }
-  
+}
+
+
+/* Optional: Add a blinking cursor */
+.typing-effect::after {
+    content: '|';
+    animation: blink 0.7s infinite step-start;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
