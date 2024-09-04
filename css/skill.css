@@ -1,16 +1,19 @@
 .tree ul {
     padding-top: 20px;
     position: relative;
-    transition: all 0.5s;
+    transition: all 0.5s ease-in-out;
 }
+
 .tree li {
     float: left;
     text-align: center;
     list-style-type: none;
     position: relative;
     padding: 20px 5px 0 5px;
-    transition: all 0.5s;
+    transition: all 0.5s ease-in-out;
+    animation: slideIn 0.7s ease-in-out;
 }
+
 .tree li::before, .tree li::after {
     content: '';
     position: absolute;
@@ -20,27 +23,34 @@
     width: 50%;
     height: 20px;
 }
+
 .tree li::after {
     right: auto;
     left: 50%;
     border-left: 1px solid #ccc;
 }
+
 .tree li:only-child::after, .tree li:only-child::before {
     display: none;
 }
+
 .tree li:only-child {
     padding-top: 0;
 }
+
 .tree li:first-child::before, .tree li:last-child::after {
     border: 0 none;
 }
+
 .tree li:last-child::before {
     border-right: 1px solid #ccc;
     border-radius: 0 5px 0 0;
 }
+
 .tree li:first-child::after {
     border-radius: 5px 0 0 0;
 }
+
 .tree ul ul::before {
     content: '';
     position: absolute;
@@ -50,6 +60,7 @@
     width: 0;
     height: 20px;
 }
+
 .tree li a {
     border: 1px solid #ccc;
     padding: 5px 10px;
@@ -59,10 +70,56 @@
     font-size: 12px;
     display: inline-block;
     border-radius: 5px;
-    transition: all 0.5s;
+    transition: all 0.5s ease-in-out;
+    animation: pulseIn 1.2s ease-in-out;
 }
+
 .tree li a:hover, .tree li a:hover + ul li a {
     background: #c8e4f8;
     color: #000;
     border: 1px solid #94a0b4;
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    animation: pulse 0.5s ease-in-out infinite;
 }
+
+/* Slide-in animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Pulse-in animation */
+@keyframes pulseIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Hover pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
