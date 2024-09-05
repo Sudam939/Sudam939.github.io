@@ -17,7 +17,7 @@ function closeDrawer() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const typedText = "GOD Sudam Shrestha";
+    const typedText = "Sudam Shrestha";
     const typingSpeed = 200; // Typing speed
     const erasingSpeed = 10; // Erasing speed
     const delayBeforeErasing = 2000; // Delay before starting to erase
