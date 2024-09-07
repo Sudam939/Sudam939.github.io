@@ -48,16 +48,18 @@
                         </a>
                     </div>
 
+                    <!-- Desktop Menu -->
                     <div class="hidden md:flex gap-5 md:gap-8 lg:gap-20">
                         <a class="poppins font-semibold underline-grow" href="/" aria-label="Home">Home</a>
-                        <a class="poppins font-semibold underline-grow hidden lg:block" href="./skill"
+                        <a class="poppins font-semibold underline-grow" href="./skill"
                             aria-label="Skills">Skills</a>
-                        <a class="poppins font-semibold active underline-grow" href="./project"
+                        <a class="poppins font-semibold underline-grow active" href="./project"
                             aria-label="Projects">Projects</a>
                         <a class="poppins font-semibold underline-grow" href="./contact"
-                            aria-label="Contact">Contacts</a>
+                            aria-label="Contact">Contact</a>
                     </div>
 
+                    <!-- Mobile Menu Toggle Button -->
                     <button id="menu-toggle" class="md:hidden text-2xl" aria-label="Open Menu">
                         <span>&#9776;</span>
                     </button>
@@ -66,15 +68,18 @@
                 <!-- Drawer Menu for Mobile -->
                 <div id="drawer-menu"
                     class="fixed top-0 left-0 h-full w-[250px] bg-[#F9FAFB] shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out z-[9999]">
-                    <div class="flex justify-between items-center p-5">
-                        <h2 class="text-xl font-bold">Menu</h2>
-                        <button id="close-menu" class="text-2xl" aria-label="Close Menu">&times;</button>
+                    <div class="flex justify-between items-start p-5">
+                        <div>
+                            <h2 class="text-xl font-bold">Sudam Shrestha</h2>
+                            <strong class="font-semibold">Full Stack Developer</strong>
+                        </div>
+                        <button id="close-menu" class="text-4xl" aria-label="Close Menu">&times;</button>
                     </div>
                     <div class="flex flex-col items-start gap-4 pl-5 mt-5">
-                        <a class="poppins font-semibold underline" href="/" aria-label="Home">Home</a>
-                        <a class="poppins font-semibold hidden" href="./skill" aria-label="Skills">Skills</a>
-                        <a class="poppins font-semibold" href="./project" aria-label="Projects">Projects</a>
-                        <a class="poppins font-semibold" href="./contact" aria-label="Contact">Contacts</a>
+                        <a class="poppins font-semibold" href="/" aria-label="Home">Home</a>
+                        <a class="poppins font-semibold" href="./skill" aria-label="Skills">Skills</a>
+                        <a class="poppins font-semibold active" href="./project" aria-label="Projects">Projects</a>
+                        <a class="poppins font-semibold" href="./contact" aria-label="Contact">Contact</a>
                     </div>
                 </div>
             </nav>
@@ -83,10 +88,10 @@
     <!-- navbar ends -->
 
     <main>
-        <div class="container">
+        <div class="w-[80%] sm:w-1/2 lg:w-[90%] m-auto py-10">
             <div class="grid grid-cols-12 gap-4 py-10">
-                <!-- side pannel -->
-                <aside class="rounded-2xl hero col-span-12 h-[450px] md:bg-[#F9FAFB] lg:fixed w-[300px]">
+                <!-- Side Panel -->
+                <aside class="rounded-2xl hero col-span-12 h-[450px] bg-[#F9FAFB] lg:fixed w-[300px]">
                     <div class="relative">
                         <img width="180" class="absolute left-[19%] -top-44 rounded-lg shadow-2xl"
                             src="../images/hero.webp" alt="Sudam Shrestha Profile Picture">
@@ -113,7 +118,7 @@
                                 <a href="tel:9704508525" class="flex items-center gap-2" aria-label="Phone">
                                     <img width="18" src="../images/phone.svg" alt="Phone Icon">
                                     <div>
-                                        <p class="text-xs text-gray-400">Phone</p>
+                                        <p class="text-xs text-gray-500">Phone</p>
                                         <p class="font-semibold text-md">9704508525</p>
                                     </div>
                                 </a>
@@ -124,7 +129,7 @@
                                     aria-label="Email">
                                     <img width="18" src="../images/envelope.svg" alt="Email Icon">
                                     <div>
-                                        <p class="text-xs text-gray-400">Email</p>
+                                        <p class="text-xs text-gray-500">Email</p>
                                         <p class="font-semibold w-1/2 text-md">sudamshrestha939@gmail.com</p>
                                     </div>
                                 </a>
@@ -134,7 +139,7 @@
                                 <div class="flex items-center gap-2">
                                     <img width="18" src="../images/location.svg" alt="Location Icon">
                                     <div>
-                                        <p class="text-xs text-gray-400">Location</p>
+                                        <p class="text-xs text-gray-500">Location</p>
                                         <p class="font-semibold text-md">Dharan, Nepal</p>
                                     </div>
                                 </div>
@@ -142,166 +147,176 @@
                         </div>
                     </div>
                 </aside>
-
             </div>
-            <div class="lg:pl-[400px] -mt-[70px] md:pt-14">
-                <div class="lg:flex items-center justify-center">
-                    <div class="rounded-lg shadow-lg pb-10 w-full">
-                        <div class="container mx-auto">
-                            <h2 class="text-3xl font-bold text-gray-900 mb-6">My Projects</h2>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <!-- Project 1 -->
-                                <div>
-                                    <a href="https://dharankitchen.com/" target="_blank"
-                                        class="block bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-105 relative">
-                                        <img src="/images/projects/dharankitchen.png" alt="Project Image"
-                                            class="w-full h-full object-cover rounded-t-lg">
-                                        <div
-                                            class="p-4 absolute inset-0 flex items-center justify-center bg-gray-600 bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                            <h3 class="text-xl font-semibold text-white">
-                                                Dharan Kitchen
-                                            </h3>
-                                        </div>
-                                        <h1 class="text-center poppins pb-1 pt-1 text-2xl font-semibold lg:hidden">
-                                            Dharan Kitchen</h1>
-                                    </a>
-                                </div>
-                                <!-- Project 2 -->
-                                <div>
-                                    <a href="https://ankitbothra.com/" target="_blank"
-                                        class="block bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-105 relative">
-                                        <img src="/images/projects/ankitbro.png" alt="Project Image"
-                                            class="w-full h-full object-cover rounded-t-lg">
-                                        <div
-                                            class="p-4 absolute inset-0 flex items-center justify-center bg-gray-600 bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                            <h3 class="text-xl font-semibold text-white">
-                                                Ankit Brother And Co.
-                                            </h3>
-                                        </div>
-                                        <h1 class="text-center poppins pb-1 pt-1 text-2xl font-semibold lg:hidden">Ankit
-                                            Brother And Co.</h1>
-                                    </a>
-                                </div>
-                                <!-- Project 3 -->
-                                <div>
-                                    <a href="https://www.cctdharan.edu.np/" target="_blank"
-                                        class="block bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-105 relative">
-                                        <img src="/images/projects/cct.png" alt="Project Image"
-                                            class="w-full h-full object-cover rounded-t-lg">
-                                        <div
-                                            class="p-4 absolute inset-0 flex items-center justify-center bg-gray-600 bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                            <h3 class="text-xl font-semibold text-white">
-                                                Central Campus of Technology
-                                            </h3>
-                                        </div>
-                                        <h1 class="text-center poppins pb-1 pt-1 text-2xl font-semibold lg:hidden">
-                                            Central Campus of Technology</h1>
-                                    </a>
-                                </div>
-                                <!-- Project 4 -->
-                                <div>
-                                    <a href="https://codeit.com.np/" target="_blank"
-                                        class="block bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-105 relative">
-                                        <img src="/images/projects/codeit.png" alt="Project Image"
-                                            class="w-full h-full object-cover rounded-t-lg">
-                                        <div
-                                            class="p-4 absolute inset-0 flex items-center justify-center bg-gray-600 bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                            <h3 class="text-xl font-semibold text-white">
-                                                CodeIt
-                                            </h3>
-                                        </div>
-                                        <h1 class="text-center poppins pb-1 pt-1 text-2xl font-semibold lg:hidden">
-                                            CodeIt</h1>
-                                    </a>
-                                </div>
-                                <!-- Project 5 -->
-                                <div>
-                                    <a href="https://floor.com.np/" target="_blank"
-                                        class="block bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-105 relative">
-                                        <img src="/images/projects/floor.png" alt="Project Image"
-                                            class="w-full h-full object-cover rounded-t-lg">
-                                        <div
-                                            class="p-4 absolute inset-0 flex items-center justify-center bg-gray-600 bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                            <h3 class="text-xl font-semibold text-white">
-                                                Floor Digital
-                                            </h3>
-                                        </div>
-                                        <h1 class="text-center poppins pb-1 pt-1 text-2xl font-semibold lg:hidden">Floor
-                                            Digital
-                                        </h1>
-                                    </a>
-                                </div>
-                                <!-- Project 6 -->
-                                <div>
-                                    <a href="https://homelinkservice.com/" target="_blank"
-                                        class="block bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-105 relative">
-                                        <img src="/images/projects/homelink.png" alt="Project Image"
-                                            class="w-full h-full object-cover rounded-t-lg">
-                                        <div
-                                            class="p-4 absolute inset-0 flex items-center justify-center bg-gray-600 bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                            <h3 class="text-xl font-semibold text-white">
-                                                Home Link Services
-                                            </h3>
-                                        </div>
-                                        <h1 class="text-center poppins pb-1 pt-1 text-2xl font-semibold lg:hidden">Home
-                                            Link Services</h1>
-                                    </a>
-                                </div>
-                                <!-- Project 7 -->
-                                <div>
-                                    <a href="https://jawaaf.com/" target="_blank"
-                                        class="block bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-105 relative">
-                                        <img src="/images/projects/jawaf.png" alt="Project Image"
-                                            class="w-full h-full object-cover rounded-t-lg">
-                                        <div
-                                            class="p-4 absolute inset-0 flex items-center justify-center bg-gray-600 bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                            <h3 class="text-xl font-semibold text-white">
+        </div>
+
+
+        <section>
+            <div class="container">
+                <div class="lg:pl-[400px] -mt-[70px]">
+                    <div class="lg:flex items-center justify-center">
+                        <div class="rounded-lg shadow-lg pb-10 w-full">
+                            <div class="container mx-auto">
+                                <h2 class="text-3xl font-bold text-gray-900 mb-6">My Projects</h2>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <!-- Project 1 -->
+                                    <div>
+                                        <a href="https://dharankitchen.com/" target="_blank"
+                                            class="block bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-105 relative">
+                                            <img src="/images/projects/dharankitchen.png" alt="Project Image"
+                                                class="w-full h-full object-cover rounded-t-lg">
+                                            <div
+                                                class="p-4 absolute inset-0 flex items-center justify-center bg-gray-600 bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                                <h3 class="text-xl font-semibold text-white">
+                                                    Dharan Kitchen
+                                                </h3>
+                                            </div>
+                                            <h1 class="text-center poppins pb-1 pt-1 text-2xl font-semibold lg:hidden">
+                                                Dharan Kitchen</h1>
+                                        </a>
+                                    </div>
+                                    <!-- Project 2 -->
+                                    <div>
+                                        <a href="https://ankitbothra.com/" target="_blank"
+                                            class="block bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-105 relative">
+                                            <img src="/images/projects/ankitbro.png" alt="Project Image"
+                                                class="w-full h-full object-cover rounded-t-lg">
+                                            <div
+                                                class="p-4 absolute inset-0 flex items-center justify-center bg-gray-600 bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                                <h3 class="text-xl font-semibold text-white">
+                                                    Ankit Brother And Co.
+                                                </h3>
+                                            </div>
+                                            <h1 class="text-center poppins pb-1 pt-1 text-2xl font-semibold lg:hidden">
+                                                Ankit
+                                                Brother And Co.</h1>
+                                        </a>
+                                    </div>
+                                    <!-- Project 3 -->
+                                    <div>
+                                        <a href="https://www.cctdharan.edu.np/" target="_blank"
+                                            class="block bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-105 relative">
+                                            <img src="/images/projects/cct.png" alt="Project Image"
+                                                class="w-full h-full object-cover rounded-t-lg">
+                                            <div
+                                                class="p-4 absolute inset-0 flex items-center justify-center bg-gray-600 bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                                <h3 class="text-xl font-semibold text-white">
+                                                    Central Campus of Technology
+                                                </h3>
+                                            </div>
+                                            <h1 class="text-center poppins pb-1 pt-1 text-2xl font-semibold lg:hidden">
+                                                Central Campus of Technology</h1>
+                                        </a>
+                                    </div>
+                                    <!-- Project 4 -->
+                                    <div>
+                                        <a href="https://codeit.com.np/" target="_blank"
+                                            class="block bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-105 relative">
+                                            <img src="/images/projects/codeit.png" alt="Project Image"
+                                                class="w-full h-full object-cover rounded-t-lg">
+                                            <div
+                                                class="p-4 absolute inset-0 flex items-center justify-center bg-gray-600 bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                                <h3 class="text-xl font-semibold text-white">
+                                                    CodeIt
+                                                </h3>
+                                            </div>
+                                            <h1 class="text-center poppins pb-1 pt-1 text-2xl font-semibold lg:hidden">
+                                                CodeIt</h1>
+                                        </a>
+                                    </div>
+                                    <!-- Project 5 -->
+                                    <div>
+                                        <a href="https://floor.com.np/" target="_blank"
+                                            class="block bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-105 relative">
+                                            <img src="/images/projects/floor.png" alt="Project Image"
+                                                class="w-full h-full object-cover rounded-t-lg">
+                                            <div
+                                                class="p-4 absolute inset-0 flex items-center justify-center bg-gray-600 bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                                <h3 class="text-xl font-semibold text-white">
+                                                    Floor Digital
+                                                </h3>
+                                            </div>
+                                            <h1 class="text-center poppins pb-1 pt-1 text-2xl font-semibold lg:hidden">
+                                                Floor
+                                                Digital
+                                            </h1>
+                                        </a>
+                                    </div>
+                                    <!-- Project 6 -->
+                                    <div>
+                                        <a href="https://homelinkservice.com/" target="_blank"
+                                            class="block bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-105 relative">
+                                            <img src="/images/projects/homelink.png" alt="Project Image"
+                                                class="w-full h-full object-cover rounded-t-lg">
+                                            <div
+                                                class="p-4 absolute inset-0 flex items-center justify-center bg-gray-600 bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                                <h3 class="text-xl font-semibold text-white">
+                                                    Home Link Services
+                                                </h3>
+                                            </div>
+                                            <h1 class="text-center poppins pb-1 pt-1 text-2xl font-semibold lg:hidden">
+                                                Home
+                                                Link Services</h1>
+                                        </a>
+                                    </div>
+                                    <!-- Project 7 -->
+                                    <div>
+                                        <a href="https://jawaaf.com/" target="_blank"
+                                            class="block bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-105 relative">
+                                            <img src="/images/projects/jawaf.png" alt="Project Image"
+                                                class="w-full h-full object-cover rounded-t-lg">
+                                            <div
+                                                class="p-4 absolute inset-0 flex items-center justify-center bg-gray-600 bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                                <h3 class="text-xl font-semibold text-white">
+                                                    Jawaaf
+                                                </h3>
+                                            </div>
+                                            <h1 class="text-center poppins pb-1 pt-1 text-2xl font-semibold lg:hidden">
                                                 Jawaaf
-                                            </h3>
-                                        </div>
-                                        <h1 class="text-center poppins pb-1 pt-1 text-2xl font-semibold lg:hidden">
-                                            Jawaaf
-                                        </h1>
-                                    </a>
-                                </div>
-                                <!-- Project 8 -->
-                                <div>
-                                    <a href="https://www.dmcdharan.com/" target="_blank"
-                                        class="block bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-105 relative">
-                                        <img src="/images/projects/nast.png" alt="Project Image"
-                                            class="w-full h-full object-cover rounded-t-lg">
-                                        <div
-                                            class="p-4 absolute inset-0 flex items-center justify-center bg-gray-600 bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                            <h3 class="text-xl font-semibold text-white">
+                                            </h1>
+                                        </a>
+                                    </div>
+                                    <!-- Project 8 -->
+                                    <div>
+                                        <a href="https://www.dmcdharan.com/" target="_blank"
+                                            class="block bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-105 relative">
+                                            <img src="/images/projects/nast.png" alt="Project Image"
+                                                class="w-full h-full object-cover rounded-t-lg">
+                                            <div
+                                                class="p-4 absolute inset-0 flex items-center justify-center bg-gray-600 bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                                <h3 class="text-xl font-semibold text-white">
+                                                    NAAST
+                                                </h3>
+                                            </div>
+                                            <h1 class="text-center poppins pb-1 pt-1 text-2xl font-semibold lg:hidden">
                                                 NAAST
-                                            </h3>
-                                        </div>
-                                        <h1 class="text-center poppins pb-1 pt-1 text-2xl font-semibold lg:hidden">NAAST
-                                        </h1>
-                                    </a>
-                                </div>
-                                <!-- Project 9 -->
-                                <div>
-                                    <a href="https://www.nbkhukuri.com/" target="_blank"
-                                        class="block bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-105 relative">
-                                        <img src="/images/projects/nbkhukuri.png" alt="Project Image"
-                                            class="w-full h-full object-cover rounded-t-lg">
-                                        <div
-                                            class="p-4 absolute inset-0 flex items-center justify-center bg-gray-600 bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                            <h3 class="text-xl font-semibold text-white">
-                                                Nb Khukuri
-                                            </h3>
-                                        </div>
-                                        <h1 class="text-center poppins pb-1 pt-1 text-2xl font-semibold lg:hidden">Nb
-                                            Khukuri</h1>
-                                    </a>
+                                            </h1>
+                                        </a>
+                                    </div>
+                                    <!-- Project 9 -->
+                                    <div>
+                                        <a href="https://www.nbkhukuri.com/" target="_blank"
+                                            class="block bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-105 relative">
+                                            <img src="/images/projects/nbkhukuri.png" alt="Project Image"
+                                                class="w-full h-full object-cover rounded-t-lg">
+                                            <div
+                                                class="p-4 absolute inset-0 flex items-center justify-center bg-gray-600 bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                                <h3 class="text-xl font-semibold text-white">
+                                                    Nb Khukuri
+                                                </h3>
+                                            </div>
+                                            <h1 class="text-center poppins pb-1 pt-1 text-2xl font-semibold lg:hidden">
+                                                Nb
+                                                Khukuri</h1>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>  
             </div>
-        </div>
+        </section>
     </main>
 
     <footer class="pt-8">

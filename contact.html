@@ -48,16 +48,17 @@
                         </a>
                     </div>
 
+                    <!-- Desktop Menu -->
                     <div class="hidden md:flex gap-5 md:gap-8 lg:gap-20">
                         <a class="poppins font-semibold underline-grow" href="/" aria-label="Home">Home</a>
-                        <a class="poppins font-semibold underline-grow hidden lg:block" href="./skill"
-                            aria-label="Skills">Skills</a>
+                        <a class="poppins font-semibold underline-grow" href="./skill" aria-label="Skills">Skills</a>
                         <a class="poppins font-semibold underline-grow" href="./project"
                             aria-label="Projects">Projects</a>
-                        <a class="poppins active font-semibold underline-grow" href="./contact"
-                            aria-label="Contact">Contacts</a>
+                        <a class="poppins font-semibold underline-grow active" href="./contact"
+                            aria-label="Contact">Contact</a>
                     </div>
 
+                    <!-- Mobile Menu Toggle Button -->
                     <button id="menu-toggle" class="md:hidden text-2xl" aria-label="Open Menu">
                         <span>&#9776;</span>
                     </button>
@@ -66,15 +67,18 @@
                 <!-- Drawer Menu for Mobile -->
                 <div id="drawer-menu"
                     class="fixed top-0 left-0 h-full w-[250px] bg-[#F9FAFB] shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out z-[9999]">
-                    <div class="flex justify-between items-center p-5">
-                        <h2 class="text-xl font-bold">Menu</h2>
-                        <button id="close-menu" class="text-2xl" aria-label="Close Menu">&times;</button>
+                    <div class="flex justify-between items-start p-5">
+                        <div>
+                            <h2 class="text-xl font-bold">Sudam Shrestha</h2>
+                            <strong class="font-semibold">Full Stack Developer</strong>
+                        </div>
+                        <button id="close-menu" class="text-4xl" aria-label="Close Menu">&times;</button>
                     </div>
                     <div class="flex flex-col items-start gap-4 pl-5 mt-5">
-                        <a class="poppins font-semibold underline" href="/" aria-label="Home">Home</a>
-                        <a class="poppins font-semibold hidden" href="./skill" aria-label="Skills">Skills</a>
+                        <a class="poppins font-semibold" href="/" aria-label="Home">Home</a>
+                        <a class="poppins font-semibold" href="./skill" aria-label="Skills">Skills</a>
                         <a class="poppins font-semibold" href="./project" aria-label="Projects">Projects</a>
-                        <a class="poppins font-semibold" href="./contact" aria-label="Contact">Contacts</a>
+                        <a class="poppins font-semibold active" href="./contact" aria-label="Contact">Contact</a>
                     </div>
                 </div>
             </nav>
@@ -83,10 +87,10 @@
     <!-- navbar ends -->
 
     <main>
-        <div class="container">
+        <div class="w-[80%] sm:w-1/2 lg:w-[90%] m-auto py-10">
             <div class="grid grid-cols-12 gap-4 py-10">
-                <!-- side pannel -->
-                <aside class="rounded-2xl hero col-span-12 h-[450px] md:bg-[#F9FAFB] lg:fixed w-[300px]">
+                <!-- Side Panel -->
+                <aside class="rounded-2xl hero col-span-12 h-[450px] bg-[#F9FAFB] lg:fixed w-[300px]">
                     <div class="relative">
                         <img width="180" class="absolute left-[19%] -top-44 rounded-lg shadow-2xl"
                             src="../images/hero.webp" alt="Sudam Shrestha Profile Picture">
@@ -113,7 +117,7 @@
                                 <a href="tel:9704508525" class="flex items-center gap-2" aria-label="Phone">
                                     <img width="18" src="../images/phone.svg" alt="Phone Icon">
                                     <div>
-                                        <p class="text-xs text-gray-400">Phone</p>
+                                        <p class="text-xs text-gray-500">Phone</p>
                                         <p class="font-semibold text-md">9704508525</p>
                                     </div>
                                 </a>
@@ -124,7 +128,7 @@
                                     aria-label="Email">
                                     <img width="18" src="../images/envelope.svg" alt="Email Icon">
                                     <div>
-                                        <p class="text-xs text-gray-400">Email</p>
+                                        <p class="text-xs text-gray-500">Email</p>
                                         <p class="font-semibold w-1/2 text-md">sudamshrestha939@gmail.com</p>
                                     </div>
                                 </a>
@@ -134,7 +138,7 @@
                                 <div class="flex items-center gap-2">
                                     <img width="18" src="../images/location.svg" alt="Location Icon">
                                     <div>
-                                        <p class="text-xs text-gray-400">Location</p>
+                                        <p class="text-xs text-gray-500">Location</p>
                                         <p class="font-semibold text-md">Dharan, Nepal</p>
                                     </div>
                                 </div>
@@ -142,61 +146,62 @@
                         </div>
                     </div>
                 </aside>
-
-
             </div>
+        </div>
 
-            <div class="lg:pl-[400px] -mt-[70px] md:pt-14">
-                <div class="flex items-center justify-center">
-                    <div class="p-10 rounded-lg shadow-lg max-w-5xl w-full">
-                        <div class="flex flex-col md:flex-row items-start">
-                            <!-- Contact Form Section -->
-                            <div class="flex-grow">
-                                <h2 class="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h2>
-                                <form action="https://formsubmit.co/sudamshrestha939@gmail.com" method="POST">
-                                    <input type="hidden" name="_captcha" value="false">
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        <div>
-                                            <label for="name"
-                                                class="block text-sm font-medium text-gray-700">Name</label>
-                                            <input type="text" name="name" id="name" required
-                                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
-                                                placeholder="Your Name">
+        <section>
+            <div class="container">
+                <div class="lg:pl-[400px] -mt-[70px]">
+                    <div class="flex items-center justify-center">
+                        <div class="p-10 rounded-lg shadow-lg max-w-5xl w-full">
+                            <div class="flex flex-col md:flex-row items-start">
+                                <!-- Contact Form Section -->
+                                <div class="flex-grow">
+                                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+                                    <form action="https://formsubmit.co/sudamshrestha939@gmail.com" method="POST">
+                                        <input type="hidden" name="_captcha" value="false">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div>
+                                                <label for="name" class="text-sm font-medium text-gray-700">Name</label>
+                                                <input type="text" name="name" id="name" required
+                                                    class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+                                                    placeholder="Your Name">
+                                            </div>
+                                            <div>
+                                                <label for="email"
+                                                    class="text-sm font-medium text-gray-700">Email</label>
+                                                <input type="email" name="email" id="email" required
+                                                    class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+                                                    placeholder="you@example.com">
+                                            </div>
                                         </div>
-                                        <div>
-                                            <label for="email"
-                                                class="block text-sm font-medium text-gray-700">Email</label>
-                                            <input type="email" name="email" id="email" required
-                                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
-                                                placeholder="you@example.com">
+                                        <div class="mt-6">
+                                            <label for="subject"
+                                                class="text-sm font-medium text-gray-700">Subject</label>
+                                            <input type="text" name="subject" id="subject" required
+                                                class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+                                                placeholder="Subject">
                                         </div>
-                                    </div>
-                                    <div class="mt-6">
-                                        <label for="subject"
-                                            class="block text-sm font-medium text-gray-700">Subject</label>
-                                        <input type="text" name="subject" id="subject" required
-                                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
-                                            placeholder="Subject">
-                                    </div>
-                                    <div class="mt-6">
-                                        <label for="message"
-                                            class="block text-sm font-medium text-gray-700">Message</label>
-                                        <textarea name="message" id="message" rows="4" required
-                                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
-                                            placeholder="Your Message"></textarea>
-                                    </div>
-                                    <div class="mt-6">
-                                        <button type="submit"
-                                            class="bg-yellow-500 text-white px-6 py-2 rounded-full font-bold hover:bg-yellow-600">Send
-                                            Message</button>
-                                    </div>
-                                </form>
+                                        <div class="mt-6">
+                                            <label for="message"
+                                                class="text-sm font-medium text-gray-700">Message</label>
+                                            <textarea name="message" id="message" rows="4" required
+                                                class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+                                                placeholder="Your Message"></textarea>
+                                        </div>
+                                        <div class="mt-6">
+                                            <button type="submit"
+                                                class="bg-yellow-500 text-white px-6 py-2 rounded-full font-bold hover:bg-yellow-600">Send
+                                                Message</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
     <footer class="pt-8">

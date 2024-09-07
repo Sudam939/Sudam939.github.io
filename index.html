@@ -49,16 +49,18 @@
                         </a>
                     </div>
 
+                    <!-- Desktop Menu -->
                     <div class="hidden md:flex gap-5 md:gap-8 lg:gap-20">
                         <a class="poppins font-semibold underline-grow active" href="/" aria-label="Home">Home</a>
-                        <a class="poppins font-semibold underline-grow hidden lg:block" href="./skill"
+                        <a class="poppins font-semibold underline-grow" href="./skill"
                             aria-label="Skills">Skills</a>
                         <a class="poppins font-semibold underline-grow" href="./project"
                             aria-label="Projects">Projects</a>
                         <a class="poppins font-semibold underline-grow" href="./contact"
-                            aria-label="Contact">Contacts</a>
+                            aria-label="Contact">Contact</a>
                     </div>
 
+                    <!-- Mobile Menu Toggle Button -->
                     <button id="menu-toggle" class="md:hidden text-2xl" aria-label="Open Menu">
                         <span>&#9776;</span>
                     </button>
@@ -67,28 +69,30 @@
                 <!-- Drawer Menu for Mobile -->
                 <div id="drawer-menu"
                     class="fixed top-0 left-0 h-full w-[250px] bg-[#F9FAFB] shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out z-[9999]">
-                    <div class="flex justify-between items-center p-5">
-                        <h2 class="text-xl font-bold">Menu</h2>
-                        <button id="close-menu" class="text-2xl" aria-label="Close Menu">&times;</button>
+                    <div class="flex justify-between items-start p-5">
+                        <div>
+                            <h2 class="text-xl font-bold">Sudam Shrestha</h2>
+                            <strong class="font-semibold">Full Stack Developer</strong>
+                        </div>
+                        <button id="close-menu" class="text-4xl" aria-label="Close Menu">&times;</button>
                     </div>
                     <div class="flex flex-col items-start gap-4 pl-5 mt-5">
-                        <a class="poppins font-semibold underline" href="/" aria-label="Home">Home</a>
-                        <a class="poppins font-semibold hidden" href="./skill" aria-label="Skills">Skills</a>
+                        <a class="poppins font-semibold active" href="/" aria-label="Home">Home</a>
+                        <a class="poppins font-semibold" href="./skill" aria-label="Skills">Skills</a>
                         <a class="poppins font-semibold" href="./project" aria-label="Projects">Projects</a>
-                        <a class="poppins font-semibold" href="./contact" aria-label="Contact">Contacts</a>
+                        <a class="poppins font-semibold" href="./contact" aria-label="Contact">Contact</a>
                     </div>
                 </div>
             </nav>
         </div>
-
     </header>
     <!-- Navbar ends -->
 
     <main>
-        <div class="container">
+        <div class="w-[80%] sm:w-1/2 lg:w-[90%] m-auto py-10">
             <div class="grid grid-cols-12 gap-4 py-10">
                 <!-- Side Panel -->
-                <aside class="rounded-2xl hero col-span-12 h-[450px] md:bg-[#F9FAFB] lg:fixed w-[300px]">
+                <aside class="rounded-2xl hero col-span-12 h-[450px] bg-[#F9FAFB] lg:fixed w-[300px]">
                     <div class="relative">
                         <img width="180" class="absolute left-[19%] -top-44 rounded-lg shadow-2xl"
                             src="../images/hero.webp" alt="Sudam Shrestha Profile Picture">
@@ -115,7 +119,7 @@
                                 <a href="tel:9704508525" class="flex items-center gap-2" aria-label="Phone">
                                     <img width="18" src="../images/phone.svg" alt="Phone Icon">
                                     <div>
-                                        <p class="text-xs text-gray-400">Phone</p>
+                                        <p class="text-xs text-gray-500">Phone</p>
                                         <p class="font-semibold text-md">9704508525</p>
                                     </div>
                                 </a>
@@ -126,7 +130,7 @@
                                     aria-label="Email">
                                     <img width="18" src="../images/envelope.svg" alt="Email Icon">
                                     <div>
-                                        <p class="text-xs text-gray-400">Email</p>
+                                        <p class="text-xs text-gray-500">Email</p>
                                         <p class="font-semibold w-1/2 text-md">sudamshrestha939@gmail.com</p>
                                     </div>
                                 </a>
@@ -136,7 +140,7 @@
                                 <div class="flex items-center gap-2">
                                     <img width="18" src="../images/location.svg" alt="Location Icon">
                                     <div>
-                                        <p class="text-xs text-gray-400">Location</p>
+                                        <p class="text-xs text-gray-500">Location</p>
                                         <p class="font-semibold text-md">Dharan, Nepal</p>
                                     </div>
                                 </div>
@@ -149,23 +153,23 @@
 
         <section>
             <div class="container">
-                <div class="lg:pl-[400px] -mt-[70px] sm:pt-10 md:pt-14 lg:pt-0">
-                    <div class="w-[70%] m-auto md:w-[100%]">
+                <div class="lg:pl-[400px] -mt-[72px] sm:pt-10 md:pt-12 lg:pt-0 space-y-5 md:space-y-10">
+                    <div>
                         <p
-                            class="sansista slight-slant pt-6 md:pt-0 lg:pt-0 sm:text-3xl md:text-4xl lg:text-5xl sm:font-bold md:font-bold font-extrabold">
+                            class="sansista slight-slant text-2xl sm:text-3xl md:text-4xl lg:text-5xl sm:font-bold md:font-bold font-extrabold">
                             Hello!</p>
                         <h1
-                            class="sansista slight-slant sm:text-3xl md:text-4xl lg:text-5xl sm:font-bold md:font-bold font-extrabold">
+                            class="sansista slight-slant text-2xl sm:text-3xl md:text-4xl lg:text-5xl sm:font-bold md:font-bold font-extrabold">
                             It’s me <span class="text-[#FFA901] typing-effect" id="typed-name"></span>
                         </h1>
 
                         <h2
-                            class="pt-2 md:pt-4 lg:pt-6 sansista slight-slant sm:text-xl md:text-2xl lg:text-3xl sm:font-bold md:font-bold font-extrabold text-[#FFA901]">
+                            class="sansista slight-slant text-xl md:text-2xl lg:text-3xl sm:font-bold md:font-bold font-extrabold text-[#FFA901]">
                             <span class="text-black">— </span>Full Stack Developer
                         </h2>
                     </div>
 
-                    <p class="font-sans text-gray-950 text-lg pt-2 md:pt-4 lg:pt-6">
+                    <p class="font-sans text-gray-950 text-lg">
                         My passion lies in crafting seamless digital experiences using the Laravel framework. With a
                         deep-rooted expertise in Laravel and a keen eye for detail, I thrive on building robust,
                         efficient, and user-friendly web applications. My journey in the realm of development is
@@ -174,35 +178,31 @@
                         together!
                     </p>
 
-                    <div class="grid grid-cols-12 pt-7">
-                        <div class="col-span-12 md:col-span-4">
-                            <h4 class="text-lg md:text-xl lg:text-2xl text-gray-400">Experience:</h4>
+                    <div class="grid grid-cols-12">
+                        <div class="col-span-4">
+                            <h4 class="text-lg md:text-xl lg:text-2xl text-gray-500">Experience:</h4>
                             <p class="text-lg md:text-xl lg:text-2xl font-sans font-semibold">5+ Years</p>
                         </div>
 
-                        <div class="col-span-12 md:col-span-4">
-                            <h4 class="text-lg md:text-xl lg:text-2xl text-gray-400">Age:</h4>
+                        <div class="col-span-4">
+                            <h4 class="text-lg md:text-xl lg:text-2xl text-gray-500">Age:</h4>
                             <p class="text-lg md:text-xl lg:text-2xl font-sans font-semibold">24 Years</p>
                         </div>
 
-                        <div class="col-span-12 md:col-span-4">
-                            <h4 class="text-lg md:text-xl lg:text-2xl text-gray-400">Projects:</h4>
+                        <div class="col-span-4">
+                            <h4 class="text-lg md:text-xl lg:text-2xl text-gray-500">Projects:</h4>
                             <p class="text-lg md:text-xl lg:text-2xl font-sans font-semibold">11+</p>
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-12 py-10">
-                        <div class="col-span-12 md:col-span-12 lg:col-span-12 xl:col-span-6 py-5 md:py-5">
-                            <a target="_blank"
-                                class="text-xl btn rounded-2xl px-12 md:px-18 lg:px-24 py-2 font-semibold bg-[#ffa901]"
-                                href="https://sudamshrestha.com.np/images/sudamcv.pdf" aria-label="Download CV">Download
-                                CV</a>
-                        </div>
+                    <div class="flex gap-5">
+                        <a target="_blank"
+                            class="text-lg md:text-xl btn rounded-2xl px-6 lg:px-16 xl:px-24 py-2 font-semibold bg-[#ffa901]"
+                            href="https://sudamshrestha.com.np/images/sudamcv.pdf" aria-label="Download CV">Download
+                            CV</a>
 
-                        <div class="col-span-12 md:col-span-12 lg:col-span-12 xl:col-span-6 py-5 md:py-5">
-                            <a class="text-xl btn rounded-2xl px-12 md:px-18 lg:px-24 py-2 font-semibold bg-[#e5e5e6] border border-gray-600"
-                                href="./contact" aria-label="Hire Me">Hire Me</a>
-                        </div>
+                        <a class="text-lg md:text-xl btn rounded-2xl px-8 lg:px-20 xl:px-28 py-2 font-semibold bg-[#e5e5e6] border border-gray-600"
+                            href="./contact" aria-label="Hire Me">Hire Me</a>
                     </div>
                 </div>
         </section>
@@ -210,10 +210,8 @@
 
 
     <footer class="pt-8">
-        <div class="relative flex justify-center items-center">
-            <div class="absolute top-0 left-0 text-center w-full py-4 text-xs text-gray-600">
-                <p>Designed and Developed by Sudam Shrestha</p>
-            </div>
+        <div class="text-xs text-center text-gray-600">
+            <p>Designed and Developed by Sudam Shrestha</p>
         </div>
     </footer>
 

@@ -47,16 +47,18 @@
                         </a>
                     </div>
 
+                    <!-- Desktop Menu -->
                     <div class="hidden md:flex gap-5 md:gap-8 lg:gap-20">
                         <a class="poppins font-semibold underline-grow" href="/" aria-label="Home">Home</a>
-                        <a class="poppins font-semibold active underline-grow hidden lg:block" href="./skill"
+                        <a class="poppins active font-semibold underline-grow" href="./skill"
                             aria-label="Skills">Skills</a>
                         <a class="poppins font-semibold underline-grow" href="./project"
                             aria-label="Projects">Projects</a>
                         <a class="poppins font-semibold underline-grow" href="./contact"
-                            aria-label="Contact">Contacts</a>
+                            aria-label="Contact">Contact</a>
                     </div>
 
+                    <!-- Mobile Menu Toggle Button -->
                     <button id="menu-toggle" class="md:hidden text-2xl" aria-label="Open Menu">
                         <span>&#9776;</span>
                     </button>
@@ -65,15 +67,18 @@
                 <!-- Drawer Menu for Mobile -->
                 <div id="drawer-menu"
                     class="fixed top-0 left-0 h-full w-[250px] bg-[#F9FAFB] shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out z-[9999]">
-                    <div class="flex justify-between items-center p-5">
-                        <h2 class="text-xl font-bold">Menu</h2>
-                        <button id="close-menu" class="text-2xl" aria-label="Close Menu">&times;</button>
+                    <div class="flex justify-between items-start p-5">
+                        <div>
+                            <h2 class="text-xl font-bold">Sudam Shrestha</h2>
+                            <strong class="font-semibold">Full Stack Developer</strong>
+                        </div>
+                        <button id="close-menu" class="text-4xl" aria-label="Close Menu">&times;</button>
                     </div>
                     <div class="flex flex-col items-start gap-4 pl-5 mt-5">
-                        <a class="poppins font-semibold underline" href="/" aria-label="Home">Home</a>
-                        <a class="poppins font-semibold hidden" href="./skill" aria-label="Skills">Skills</a>
+                        <a class="poppins font-semibold" href="/" aria-label="Home">Home</a>
+                        <a class="poppins font-semibold active" href="./skill" aria-label="Skills">Skills</a>
                         <a class="poppins font-semibold" href="./project" aria-label="Projects">Projects</a>
-                        <a class="poppins font-semibold" href="./contact" aria-label="Contact">Contacts</a>
+                        <a class="poppins font-semibold" href="./contact" aria-label="Contact">Contact</a>
                     </div>
                 </div>
             </nav>
@@ -82,10 +87,10 @@
     <!-- navbar ends -->
 
     <main>
-        <div class="container">
+        <div class="container hidden md:block sm:w-1/2 m-auto py-10">
             <div class="grid grid-cols-12 gap-4 py-10">
-                <!-- side pannel -->
-                <aside class="rounded-2xl hero col-span-12 h-[450px] md:bg-[#F9FAFB] lg:fixed w-[300px]">
+                <!-- Side Panel -->
+                <aside class="rounded-2xl hero col-span-12 h-[450px] bg-[#F9FAFB] lg:fixed w-[300px]">
                     <div class="relative">
                         <img width="180" class="absolute left-[19%] -top-44 rounded-lg shadow-2xl"
                             src="../images/hero.webp" alt="Sudam Shrestha Profile Picture">
@@ -112,7 +117,7 @@
                                 <a href="tel:9704508525" class="flex items-center gap-2" aria-label="Phone">
                                     <img width="18" src="../images/phone.svg" alt="Phone Icon">
                                     <div>
-                                        <p class="text-xs text-gray-400">Phone</p>
+                                        <p class="text-xs text-gray-500">Phone</p>
                                         <p class="font-semibold text-md">9704508525</p>
                                     </div>
                                 </a>
@@ -123,7 +128,7 @@
                                     aria-label="Email">
                                     <img width="18" src="../images/envelope.svg" alt="Email Icon">
                                     <div>
-                                        <p class="text-xs text-gray-400">Email</p>
+                                        <p class="text-xs text-gray-500">Email</p>
                                         <p class="font-semibold w-1/2 text-md">sudamshrestha939@gmail.com</p>
                                     </div>
                                 </a>
@@ -133,7 +138,7 @@
                                 <div class="flex items-center gap-2">
                                     <img width="18" src="../images/location.svg" alt="Location Icon">
                                     <div>
-                                        <p class="text-xs text-gray-400">Location</p>
+                                        <p class="text-xs text-gray-500">Location</p>
                                         <p class="font-semibold text-md">Dharan, Nepal</p>
                                     </div>
                                 </div>
@@ -142,57 +147,74 @@
                     </div>
                 </aside>
             </div>
+        </div>
 
-            <div class="lg:pl-[400px] -mt-[70px] md:pt-14">
-                <div class="tree">
-                    <ul>
-                        <li>
-                            <a href="#"><img src="/images/skills/skills.png" alt="Skills" width="120"></a>
-                            <ul>
-                                <li>
-                                    <a href="#"><img src="/images/skills/framework.png" alt="Framework" width="80"></a>
-                                    <ul>
-                                        <li><a href="#"><img width="40" src="/images/skills/nuxt.png" alt="Nuxt Js"></a>
-                                        </li>
-                                        <li><a href="#"><img src="/images/skills/vue.png" alt="Vuetify" width="35"></a>
-                                        </li>
-                                        <li><a href="#"><img src="/images/skills/laravel.png" alt="Laravel"
-                                                    width="32"></a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="/images/skills/language.png" alt="Language" width="60"></a>
-                                    <ul>
-                                        <li><a href="#"><img src="/images/skills/js.png" alt="Java Script"
-                                                    width="35"></a>
-                                        </li>
-                                        <li><a href="#"><img src="/images/skills/php.png" alt="PHP" width="60"></a></li>
-                                        <li><a href="#"><img src="/images/skills/python.png" alt="Python"
-                                                    width="35"></a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="/images/skills/others.png" alt="Others" width="60"></a>
-                                    <ul>
-                                        <li><a href="#"><img src="/images/skills/html.png" alt="HTML" width="35"></a>
-                                        </li>
-                                        <li><a href="#"><img src="/images/skills/css.png" alt="CSS" width="35"></a></li>
-                                        <li><a href="#"><img src="/images/skills/restaapi.png" alt="Rest Api"
-                                                    width="35"></a></li>
-                                        <li><a href="#"><img src="/images/skills/mysql.png" alt="MySql" width="30"></a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+        <section class="pt-20 md:pt-0">
+            <div class="container">
+                <div class="lg:pl-[400px] -mt-[70px] md:pt-14 overflow-x-scroll">
+                    <div class="tree w-max">
+                        <ul>
+                            <li>
+                                <a href="#"><img src="/images/skills/skills.png" alt="Skills" width="120"></a>
+                                <ul>
+                                    <li>
+                                        <a href="#"><img src="/images/skills/framework.png" alt="Framework"
+                                                width="80"></a>
+                                        <ul>
+                                            <li><a href="#"><img width="40" src="/images/skills/nuxt.png"
+                                                        alt="Nuxt Js"></a>
+                                            </li>
+                                            <li><a href="#"><img src="/images/skills/vue.png" alt="Vuetify"
+                                                        width="35"></a>
+                                            </li>
+                                            <li><a href="#"><img src="/images/skills/laravel.png" alt="Laravel"
+                                                        width="32"></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="/images/skills/language.png" alt="Language"
+                                                width="60"></a>
+                                        <ul>
+                                            <li><a href="#"><img src="/images/skills/js.png" alt="Java Script"
+                                                        width="35"></a>
+                                            </li>
+                                            <li><a href="#"><img src="/images/skills/php.png" alt="PHP" width="60"></a>
+                                            </li>
+                                            <li><a href="#"><img src="/images/skills/python.png" alt="Python"
+                                                        width="35"></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="/images/skills/others.png" alt="Others" width="60"></a>
+                                        <ul>
+                                            <li><a href="#"><img src="/images/skills/html.png" alt="HTML"
+                                                        width="35"></a>
+                                            </li>
+                                            <li><a href="#"><img src="/images/skills/css.png" alt="CSS" width="35"></a>
+                                            </li>
+                                            <li><a href="#"><img src="/images/skills/restaapi.png" alt="Rest Api"
+                                                        width="35"></a></li>
+                                            <li><a href="#"><img src="/images/skills/mysql.png" alt="MySql"
+                                                        width="30"></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
+    <footer class="pt-8">
+        <div class="text-xs text-center text-gray-600">
+            <p>Designed and Developed by Sudam Shrestha</p>
+        </div>
+    </footer>
 
     <script src="./js/script.js"></script>
 
