@@ -212,11 +212,11 @@ h1 {
   
   .gallery__item:hover .gallery__icon,
   .gallery__item:hover .gallery__title {
-    opacity: 1; /* Show icon and title on hover */
+    opacity: 1;
   }
   
   .gallery__item:hover .gallery__title {
-    bottom: 1.3rem; /* Move title up on hover */
+    bottom: 1.3rem;
   }
   
   .gallery__title::before {
