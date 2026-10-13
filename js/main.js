@@ -1,4 +1,4 @@
-(function(){
+(function () {
   const bootBar = document.getElementById('bootBar');
   const bootScreen = document.getElementById('boot-screen');
   let prog = 0;
@@ -18,10 +18,10 @@
 
   const winstates = {};
   let zTop = 200;
-  const WIN_IDS = ['about','skills','projects','experience','contact','terminal'];
-  const WIN_LABELS = { about:'👤 about', skills:'⚡ skills', projects:'📂 projects', experience:'📋 exp', contact:'📬 contact', terminal:'🖥 term' };
+  const WIN_IDS = ['about', 'skills', 'projects', 'experience', 'contact', 'terminal', 'snake'];
+  const WIN_LABELS = { about: '👤 about', skills: '⚡ skills', projects: '📂 projects', experience: '📋 exp', contact: '📬 contact', terminal: '🖥 term', snake: '🐍 snake' };
 
-  window.openWin = function(id) {
+  window.openWin = function (id) {
     const w = document.getElementById('win-' + id);
     if (!w) return;
 
@@ -51,7 +51,7 @@
     if (id === 'terminal') setTimeout(() => document.getElementById('termInput').focus(), 80);
   };
 
-  window.closeWin = function(id) {
+  window.closeWin = function (id) {
     const w = document.getElementById('win-' + id);
     w.classList.remove('open');
     w.style.display = 'none';
@@ -60,12 +60,12 @@
     updateTaskbar();
   };
 
-  window.minWin = function(id) {
+  window.minWin = function (id) {
     const w = document.getElementById('win-' + id);
     if (!winstates[id]) { winstates[id] = { open: true, minimized: false }; }
     winstates[id].minimized = !winstates[id].minimized;
     if (winstates[id].minimized) {
-      w.style.display = 'none'; w.classList.remove('open'); w.setAttribute('aria-hidden','true');
+      w.style.display = 'none'; w.classList.remove('open'); w.setAttribute('aria-hidden', 'true');
     } else {
       w.style.display = 'flex'; w.classList.add('open'); w.removeAttribute('aria-hidden'); bringFront(id);
     }
@@ -73,7 +73,7 @@
   };
 
   const preMaxSize = {};
-  window.maxWin = function(id) {
+  window.maxWin = function (id) {
     const w = document.getElementById('win-' + id);
     if (!winstates[id]) { winstates[id] = { open: true, minimized: false }; }
 
@@ -140,13 +140,13 @@
     }
   }
 
-  window.openAllWindows  = function() { WIN_IDS.forEach(id => openWin(id)); };
-  window.closeAllWindows = function() {
-    WIN_IDS.forEach(id => { const w = document.getElementById('win-'+id); if(w) { w.classList.remove('open'); w.style.display = 'none'; w.setAttribute('aria-hidden','true'); } });
-    for(const k in winstates) delete winstates[k];
+  window.openAllWindows = function () { WIN_IDS.forEach(id => openWin(id)); };
+  window.closeAllWindows = function () {
+    WIN_IDS.forEach(id => { const w = document.getElementById('win-' + id); if (w) { w.classList.remove('open'); w.style.display = 'none'; w.setAttribute('aria-hidden', 'true'); } });
+    for (const k in winstates) delete winstates[k];
     updateTaskbar();
   };
-  window.toggleAllWindows = function() { const anyOpen = Object.keys(winstates).length > 0; anyOpen ? closeAllWindows() : openWin('about'); };
+  window.toggleAllWindows = function () { const anyOpen = Object.keys(winstates).length > 0; anyOpen ? closeAllWindows() : openWin('about'); };
 
   // Keyboard navigation for icons
   document.querySelectorAll('.icon').forEach(icon => {
@@ -182,15 +182,15 @@
     nx = Math.max(0, Math.min(window.innerWidth - drag.el.offsetWidth, nx));
     ny = Math.max(0, Math.min(window.innerHeight - 48 - drag.el.offsetHeight, ny));
     drag.el.style.left = nx + 'px';
-    drag.el.style.top  = ny + 'px';
+    drag.el.style.top = ny + 'px';
   }
   function stopDrag() { drag = null; }
   document.querySelectorAll('.win-tb').forEach(tb => {
     tb.addEventListener('mousedown', e => startDrag(e, tb));
-    tb.addEventListener('touchstart', e => startDrag(e, tb), {passive: false});
+    tb.addEventListener('touchstart', e => startDrag(e, tb), { passive: false });
   });
   document.addEventListener('mousemove', onDragMove);
-  document.addEventListener('touchmove', onDragMove, {passive: false});
+  document.addEventListener('touchmove', onDragMove, { passive: false });
   document.addEventListener('mouseup', stopDrag);
   document.addEventListener('touchend', stopDrag);
 
@@ -209,31 +209,31 @@
     e.preventDefault();
     const clientX = e.clientX || (e.touches && e.touches[0].clientX);
     const clientY = e.clientY || (e.touches && e.touches[0].clientY);
-    const newWidth  = Math.max(260, resz.ow + (clientX - resz.ox));
+    const newWidth = Math.max(260, resz.ow + (clientX - resz.ox));
     const newHeight = Math.max(180, resz.oh + (clientY - resz.oy));
-    resz.el.style.width  = Math.min(newWidth,  window.innerWidth) + 'px';
+    resz.el.style.width = Math.min(newWidth, window.innerWidth) + 'px';
     resz.el.style.height = Math.min(newHeight, window.innerHeight - 48) + 'px';
   }
   function stopResize() { resz = null; }
   document.querySelectorAll('.rhandle').forEach(h => {
     h.addEventListener('mousedown', e => startResize(e, h));
-    h.addEventListener('touchstart', e => startResize(e, h), {passive: false});
+    h.addEventListener('touchstart', e => startResize(e, h), { passive: false });
   });
   document.addEventListener('mousemove', onResizeMove);
-  document.addEventListener('touchmove', onResizeMove, {passive: false});
+  document.addEventListener('touchmove', onResizeMove, { passive: false });
   document.addEventListener('mouseup', stopResize);
   document.addEventListener('touchend', stopResize);
 
   document.querySelectorAll('.window').forEach(w => {
     w.addEventListener('mousedown', () => bringFront(w.id.replace('win-', '')));
-    w.addEventListener('touchstart', () => bringFront(w.id.replace('win-', '')), {passive: true});
+    w.addEventListener('touchstart', () => bringFront(w.id.replace('win-', '')), { passive: true });
   });
 
   function animateBars() {
     document.querySelectorAll('.skill-fill[data-val]').forEach(el => { el.style.width = el.dataset.val + '%'; });
   }
 
-  window.selectIcon = function(id) {
+  window.selectIcon = function (id) {
     document.querySelectorAll('.icon').forEach(i => i.classList.remove('selected'));
     const ic = document.getElementById('icon-' + id);
     if (ic) ic.classList.add('selected');
@@ -247,18 +247,18 @@
   document.getElementById('desktop').addEventListener('contextmenu', e => {
     e.preventDefault();
     ctx.style.left = Math.min(e.clientX, window.innerWidth - 160) + 'px';
-    ctx.style.top  = Math.min(e.clientY, window.innerHeight - 180) + 'px';
+    ctx.style.top = Math.min(e.clientY, window.innerHeight - 180) + 'px';
     ctx.classList.add('show');
   });
   document.addEventListener('click', () => ctx.classList.remove('show'));
-  document.addEventListener('touchstart', () => ctx.classList.remove('show'), {passive: true});
+  document.addEventListener('touchstart', () => ctx.classList.remove('show'), { passive: true });
 
   // Clock
-  function tick() { document.getElementById('tbClock').textContent = new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'}); }
+  function tick() { document.getElementById('tbClock').textContent = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }); }
   tick(); setInterval(tick, 1000);
 
   // Terminal
-  const ESC = s => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  const ESC = s => String(s).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
   let isTyping = false;
   let typingInterval = null;
   let currentTypingElement = null;
@@ -288,6 +288,9 @@
           const closeIndex = htmlString.indexOf('>', charIndex);
           if (closeIndex !== -1) { currentHTML = htmlString.substring(0, closeIndex + 1); charIndex = closeIndex + 1; }
           else { currentHTML += htmlString[charIndex]; charIndex++; }
+        } else if (htmlString[charIndex] === '&' && htmlString.indexOf(';', charIndex) - charIndex < 8 && htmlString.indexOf(';', charIndex) !== -1) {
+          const semi = htmlString.indexOf(';', charIndex);
+          currentHTML += htmlString.substring(charIndex, semi + 1); charIndex = semi + 1;
         } else { currentHTML += htmlString[charIndex]; charIndex++; }
         const cursor = currentTypingCursor;
         element.innerHTML = currentHTML;
@@ -302,21 +305,46 @@
     }, speed);
   }
 
-const TCMDS = {
-    help:       () => `<div style="font-size:9px;color:var(--text-mute);margin-bottom:6px;">// commands</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:3px 12px;font-size:9px;"><div><span style="color:var(--cyan)">about</span> <span style="color:var(--text-dim)">Bio</span></div><div><span style="color:var(--cyan)">skills</span> <span style="color:var(--text-dim)">Tech</span></div><div><span style="color:var(--cyan)">projects</span> <span style="color:var(--text-dim)">Work</span></div><div><span style="color:var(--cyan)">contact</span> <span style="color:var(--text-dim)">Info</span></div><div><span style="color:var(--cyan)">clear</span> <span style="color:var(--text-dim)">Clear</span></div><div><span style="color:var(--cyan)">open [x]</span> <span style="color:var(--text-dim)">Window</span></div></div>`,
-    about:      () => `<span style="color:var(--cyan);font-size:12px;">Sudam Shrestha</span>\n<span style="color:var(--text-dim);">Senior Full Stack Developer & Python Instructor</span>\n\n<span style="color:var(--cyan);">▸</span> 6+ years Laravel, Vue, React, Node, Python\n<span style="color:var(--cyan);">▸</span> Tech Educator at CodeIT Nepal\n<span style="color:var(--cyan);">▸</span> Founder of SudamHub\n<span style="color:var(--cyan);">▸</span> 📍 Dharan, Nepal\n\n<span style="color:var(--cyan-dim);">Motto:</span> "Clean code, real impact."`,
-    skills:     () => `<span style="color:var(--cyan);font-size:12px;">Tech Stack</span>\n\n<span style="color:var(--cyan);">▸</span> Laravel/Filament — 95%\n<span style="color:var(--cyan);">▸</span> Tailwind — 92%\n<span style="color:var(--cyan);">▸</span> Vue/Nuxt — 90%\n<span style="color:var(--cyan);">▸</span> Python — 90%\n<span style="color:var(--cyan);">▸</span> React/Next — 88%\n<span style="color:var(--cyan);">▸</span> MySQL/PG — 88%\n<span style="color:var(--cyan);">▸</span> Node.js — 85%`,
-    projects:   () => `<span style="color:var(--cyan);font-size:12px;">Projects</span>\n\n<span style="color:var(--cyan);">📚</span> Student Portal API\n<span style="color:var(--cyan);">🎁</span> Koseli Express\n<span style="color:var(--cyan);">❓</span> Jawaaf Q&A\n<span style="color:var(--cyan);">🍛</span> Dharan Kitchen\n<span style="color:var(--cyan);">🏫</span> CodeIT Platform`,
+  const TCMDS = {
+    help: () => `<div style="font-size:9px;color:var(--text-mute);margin-bottom:6px;">// commands</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:3px 12px;font-size:9px;"><div><span style="color:var(--cyan)">about</span> <span style="color:var(--text-dim)">Bio</span></div><div><span style="color:var(--cyan)">skills</span> <span style="color:var(--text-dim)">Tech</span></div><div><span style="color:var(--cyan)">projects</span> <span style="color:var(--text-dim)">Work</span></div><div><span style="color:var(--cyan)">contact</span> <span style="color:var(--text-dim)">Info</span></div><div><span style="color:var(--cyan)">clear</span> <span style="color:var(--text-dim)">Clear</span></div><div><span style="color:var(--cyan)">open [x]</span> <span style="color:var(--text-dim)">Window</span></div><div><span style="color:var(--cyan)">snake</span> <span style="color:var(--text-dim)">Game</span></div></div>`,
+    about: () => `<span style="color:var(--cyan);font-size:12px;">Sudam Shrestha</span>\n<span style="color:var(--text-dim);">Head of Software, CodeIT Appsware · Instructor, CodeIT · Founder, SudamHub</span>\n\n<span style="color:var(--cyan);">▸</span> 6+ years Laravel, Vue, React, Node, Python\n<span style="color:var(--cyan);">▸</span> Tech Educator at CodeIT Nepal\n<span style="color:var(--cyan);">▸</span> Founder of SudamHub\n<span style="color:var(--cyan);">▸</span> 📍 Dharan, Nepal\n\n<span style="color:var(--cyan-dim);">Motto:</span> "Clean code, real impact."`,
+    skills: () => `<span style="color:var(--cyan);font-size:12px;">Tech Stack</span>\n\n<span style="color:var(--cyan);">▸</span> Laravel/Filament — 95%\n<span style="color:var(--cyan);">▸</span> Tailwind — 92%\n<span style="color:var(--cyan);">▸</span> Vue/Nuxt — 90%\n<span style="color:var(--cyan);">▸</span> Python — 90%\n<span style="color:var(--cyan);">▸</span> React/Next — 88%\n<span style="color:var(--cyan);">▸</span> MySQL/PG — 88%\n<span style="color:var(--cyan);">▸</span> Node.js — 85%`,
+    projects: () => {
+      const cards = [...document.querySelectorAll('#win-projects .proj-card')];
+      const rows = cards.map((c, i) => {
+        const title = ESC(c.querySelector('.proj-title').textContent.trim());
+        const desc = ESC(c.querySelector('.proj-desc').textContent.trim());
+        const badge = ESC(c.querySelector('.badge').textContent.trim());
+        const col = c.querySelector('.badge.g') ? 'var(--green)' : 'var(--blue)';
+        const href = c.querySelector('a').href;
+        const host = ESC(href.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''));
+        const n = String(i + 1).padStart(2, '0');
+        const last = i === cards.length - 1;
+        return `<div style="margin-bottom:9px;">` +
+          `<span style="color:var(--text-mute)">${n}</span> ` +
+          `<span style="color:var(--cyan);font-weight:500;">${title}</span> ` +
+          `<span style="color:${col};font-size:8px;border:1px solid ${col};border-radius:3px;padding:0 4px;opacity:.85;">${badge}</span>` +
+          `<div style="color:var(--text-dim);padding-left:20px;">${desc}</div>` +
+          `<div style="padding-left:20px;"><a href="${href}" target="_blank" rel="noopener noreferrer" style="color:var(--blue);text-decoration:none;border-bottom:1px dashed rgba(77,159,255,.4);">↗ ${host}</a></div>` +
+          `</div>`;
+      }).join('');
+      return `<div style="color:var(--cyan);font-size:12px;">~/projects</div>` +
+        `<div style="color:var(--text-mute);font-size:9px;margin-bottom:10px;">${cards.length} featured · 50+ delivered · MERN, Laravel &amp; Python</div>` +
+        rows +
+        `<div style="color:var(--text-mute);font-size:9px;">tip: type <span style="color:var(--cyan)">open projects</span> for the visual window</div>`;
+    },
     experience: () => `<span style="color:var(--cyan);font-size:12px;">Experience</span>\n\n<span style="color:var(--cyan);">▸</span> 2022-Present: Senior Dev @ CodeIT\n<span style="color:var(--cyan);">▸</span> 2020-2022: Full Stack @ CodeIT\n<span style="color:var(--cyan);">▸</span> 2019-2020: Intern @ CodeIT`,
-    contact:    () => `<span style="color:var(--cyan);font-size:12px;">Contact</span>\n\n<span style="color:var(--cyan);">📧</span> sudamshrestha939@gmail.com\n<span style="color:var(--cyan);">📱</span> +977 9704508525\n<span style="color:var(--cyan);">📍</span> Dharan-11, Nepal`,
-    whoami:     () => `<span style="color:var(--cyan);">sudam</span> — Senior Full Stack Developer & Python Instructor<br><span style="color:var(--text-mute);">CodeIT Nepal · SudamHub Founder</span>`,
-    ls:         () => `<span style="color:var(--cyan);">~/sudam/</span>\n<span style="color:var(--blue);">drwx</span> <span style="color:var(--text);">📄 about.me</span>\n<span style="color:var(--blue);">drwx</span> <span style="color:var(--text);">📂 skills/</span>\n<span style="color:var(--blue);">drwx</span> <span style="color:var(--text);">📂 projects/</span>\n<span style="color:var(--blue);">drwx</span> <span style="color:var(--text);">📞 contact.info</span>`,
-    pwd:        () => `<span style="color:var(--text-dim);">/home/sudam/portfolio</span>`,
-    clear:      () => '',
-    sudo:       () => `<span style="color:var(--orange);">[sudo] password: ••••••</span><br><span style="color:var(--green);">Access granted.</span> 🚀`,
+    contact: () => `<span style="color:var(--cyan);font-size:12px;">Contact</span>\n\n<span style="color:var(--cyan);">📧</span> sudamshrestha939@gmail.com\n<span style="color:var(--cyan);">📱</span> +977 9704508525\n<span style="color:var(--cyan);">📍</span> Dharan-11, Nepal`,
+    whoami: () => `<span style="color:var(--cyan);">sudam</span> — Head of Software, CodeIT Appsware · Instructor, CodeIT · Founder, SudamHub<br><span style="color:var(--text-mute);">CodeIT Nepal · SudamHub Founder</span>`,
+    ls: () => `<span style="color:var(--cyan);">~/sudam/</span>\n<span style="color:var(--blue);">drwx</span> <span style="color:var(--text);">📄 about.me</span>\n<span style="color:var(--blue);">drwx</span> <span style="color:var(--text);">📂 skills/</span>\n<span style="color:var(--blue);">drwx</span> <span style="color:var(--text);">📂 projects/</span>\n<span style="color:var(--blue);">drwx</span> <span style="color:var(--text);">📞 contact.info</span>`,
+    pwd: () => `<span style="color:var(--text-dim);">/home/sudam/portfolio</span>`,
+    clear: () => '',
+    sudo: () => `<span style="color:var(--orange);">[sudo] password: ••••••</span><br><span style="color:var(--green);">Access granted.</span> 🚀`,
+    snake: () => { openWin('snake'); return `<span style="color:var(--green)">▶ Launching snake.exe…</span>`; },
+    play: () => { openWin('snake'); return `<span style="color:var(--green)">▶ Launching snake.exe…</span>`; },
   };
 
-  const termOut   = document.getElementById('termOut');
+  const termOut = document.getElementById('termOut');
   const termInput = document.getElementById('termInput');
   let tHistory = [], tIdx = 0;
 
@@ -339,7 +367,7 @@ const TCMDS = {
     } else if (TCMDS[cmd]) {
       const output = TCMDS[cmd]();
       termOut.appendChild(blk); termOut.scrollTop = termOut.scrollHeight;
-      if (output) typeText(blk, output, 8);
+      if (output) typeText(blk, output, cmd === 'projects' ? 1 : 8);
     } else {
       blk.innerHTML = `<span style="color:var(--red)">bash: ${ESC(cmd)} not found</span>`; blk.classList.add('err');
       termOut.appendChild(blk); termOut.scrollTop = termOut.scrollHeight;
@@ -349,7 +377,7 @@ const TCMDS = {
   termInput.addEventListener('keydown', e => {
     if (isTyping) { e.preventDefault(); return; }
     if (e.key === 'Enter') { const v = termInput.value; termInput.value = ''; termExec(v); }
-    else if (e.key === 'ArrowUp')   { e.preventDefault(); if (tIdx > 0) termInput.value = tHistory[--tIdx] || ''; }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); if (tIdx > 0) termInput.value = tHistory[--tIdx] || ''; }
     else if (e.key === 'ArrowDown') { e.preventDefault(); if (tIdx < tHistory.length - 1) termInput.value = tHistory[++tIdx]; else { tIdx = tHistory.length; termInput.value = ''; } }
   });
 
@@ -366,18 +394,18 @@ const TCMDS = {
     const wrap = document.getElementById('particleWrap');
     if (!wrap) return;
     const defs = [
-      { b:'20%', l:'15%', dur:'9s',  del:'0s',   op:0.4,  dx:'8px',  color:'#00d4aa' },
-      { b:'35%', l:'28%', dur:'11s', del:'2s',   op:0.3,  dx:'-5px', color:'#00d4aa' },
-      { b:'55%', l:'12%', dur:'13s', del:'4s',   op:0.35, dx:'12px', color:'#4d9fff' },
-      { b:'25%', l:'72%', dur:'8s',  del:'1s',   op:0.4,  dx:'-8px', color:'#00d4aa' },
-      { b:'40%', l:'85%', dur:'10s', del:'3s',   op:0.3,  dx:'6px',  color:'#4d9fff' },
-      { b:'60%', l:'90%', dur:'12s', del:'0.5s', op:0.25, dx:'-4px', color:'#00d4aa' },
-      { b:'15%', l:'45%', dur:'7s',  del:'2.5s', op:0.35, dx:'10px', color:'#4d9fff' },
-      { b:'70%', l:'60%', dur:'14s', del:'1.5s', op:0.2,  dx:'-6px', color:'#00d4aa' },
-      { b:'80%', l:'33%', dur:'10s', del:'3.5s', op:0.25, dx:'7px',  color:'#4d9fff' },
-      { b:'10%', l:'78%', dur:'16s', del:'1s',   op:0.2,  dx:'-9px', color:'#00d4aa' },
-      { b:'50%', l:'5%',  dur:'9s',  del:'6s',   op:0.3,  dx:'5px',  color:'#4d9fff' },
-      { b:'65%', l:'50%', dur:'12s', del:'4.5s', op:0.18, dx:'-3px', color:'#00d4aa' },
+      { b: '20%', l: '15%', dur: '9s', del: '0s', op: 0.4, dx: '8px', color: '#00d4aa' },
+      { b: '35%', l: '28%', dur: '11s', del: '2s', op: 0.3, dx: '-5px', color: '#00d4aa' },
+      { b: '55%', l: '12%', dur: '13s', del: '4s', op: 0.35, dx: '12px', color: '#4d9fff' },
+      { b: '25%', l: '72%', dur: '8s', del: '1s', op: 0.4, dx: '-8px', color: '#00d4aa' },
+      { b: '40%', l: '85%', dur: '10s', del: '3s', op: 0.3, dx: '6px', color: '#4d9fff' },
+      { b: '60%', l: '90%', dur: '12s', del: '0.5s', op: 0.25, dx: '-4px', color: '#00d4aa' },
+      { b: '15%', l: '45%', dur: '7s', del: '2.5s', op: 0.35, dx: '10px', color: '#4d9fff' },
+      { b: '70%', l: '60%', dur: '14s', del: '1.5s', op: 0.2, dx: '-6px', color: '#00d4aa' },
+      { b: '80%', l: '33%', dur: '10s', del: '3.5s', op: 0.25, dx: '7px', color: '#4d9fff' },
+      { b: '10%', l: '78%', dur: '16s', del: '1s', op: 0.2, dx: '-9px', color: '#00d4aa' },
+      { b: '50%', l: '5%', dur: '9s', del: '6s', op: 0.3, dx: '5px', color: '#4d9fff' },
+      { b: '65%', l: '50%', dur: '12s', del: '4.5s', op: 0.18, dx: '-3px', color: '#00d4aa' },
     ];
     defs.forEach(d => {
       const p = document.createElement('div');

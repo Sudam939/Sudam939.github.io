@@ -1081,3 +1081,35 @@
    99%            { opacity: 0; }
    99.5%          { opacity: 0.6; }
  }
+
+ /* ── SNAKE GAME ── */
+.snake-hud {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 10px; color: var(--text-dim); margin-bottom: 8px;
+}
+.snake-hud b { color: var(--cyan); font-weight: 700; }
+#snakeCanvas {
+  display: block; width: 100%; max-width: 360px; aspect-ratio: 1;
+  margin: 0 auto; background: var(--bg);
+  border: 1px solid var(--border2); border-radius: 8px;
+  box-shadow: 0 0 24px rgba(0, 212, 170, 0.08);
+  touch-action: none;
+}
+.snake-actions { display: flex; justify-content: center; margin-top: 10px; }
+.snake-btn {
+  background: rgba(0, 212, 170, 0.09); border: 1px solid rgba(0, 212, 170, 0.25);
+  color: var(--cyan); font-family: var(--font); font-size: 10px;
+  padding: 6px 14px; border-radius: 6px; cursor: pointer; transition: background .2s;
+}
+.snake-btn:hover { background: rgba(0, 212, 170, 0.18); }
+.dpad {
+  display: grid; grid-template-columns: repeat(3, 40px); grid-template-rows: repeat(2, 36px);
+  gap: 4px; justify-content: center; margin-top: 10px;
+}
+.dpad .snake-btn { padding: 0; font-size: 14px; touch-action: manipulation; }
+.dpad .up { grid-column: 2; grid-row: 1; }
+.dpad .lf { grid-column: 1; grid-row: 2; }
+.dpad .dn { grid-column: 2; grid-row: 2; }
+.dpad .rt { grid-column: 3; grid-row: 2; }
+.snake-hint { font-size: 8px; color: var(--text-mute); text-align: center; margin-top: 8px; }
+@media (min-width: 768px) { .dpad { display: none; } }
